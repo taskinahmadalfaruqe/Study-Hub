@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayouts from "../Layouts/MainLayouts";
 import ErrorPage from "../Pages/ErrorPage";
 import HomePage from "../Pages/HomePage";
+import LoginPage from "../Pages/LoginPage";
+import SignUpPage from "../Pages/SignUpPage";
 
 const Routs =createBrowserRouter([
     {
@@ -14,6 +16,16 @@ const Routs =createBrowserRouter([
                 element: <HomePage></HomePage>
             }
         ]
-    }
+    },
+    {
+        path: "/login",
+        element: <LoginPage></LoginPage>,
+        errorElement: <ErrorPage></ErrorPage>,
+    },
+    {
+        path: "/signup",
+        element: <SignUpPage></SignUpPage>,
+        errorElement: <ErrorPage></ErrorPage>,
+    },
 ])
 export default Routs;
