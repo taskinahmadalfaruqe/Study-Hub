@@ -121,7 +121,9 @@ const Navbar = () => {
         <div className="bg-plataniamColor border-b border-orangeColor "> 
             <div className="container max-w-7xl font-Oswald flex justify-between items-center ">
             <div className="  logo  text-2xl font-bold text-blueColor">
-                <Link to={"/"}>StudyHub</Link>
+                <Link to={"/"}>
+                    <img src={"https://i.ibb.co/4tHXVTF/android-chrome-192x192.png"}  className="w-20" alt="logo" />
+                </Link>
             </div>
 
             <div className="dropdown">
