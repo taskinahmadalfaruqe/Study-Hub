@@ -16,10 +16,11 @@ const Footer = () => {
                         </div>
                     </nav>
                 </div>
-                <aside className="border-t border-orangeColor pb-5">
-                    <p className="text-center text-2xl">Copyright &copy; 2023 - All right reserved by StudyHub Industries Ltd</p>
-                </aside>
+                
             </div>
+            <aside className="border-t border-orangeColor p-5">
+                    <p className=" container text-center text-2xl">Copyright &copy; 2023 - All right reserved by StudyHub Industries Ltd</p>
+                </aside>
         </footer>
     );
 };

@@ -15,6 +15,10 @@ export default {
         '2xl': '2rem',
       },
     },
+    fontFamily: {
+      'Rancho': ['Rancho', 'cursive'],    
+      'Raleway': ['Raleway', 'sans-serif'],    
+    },
     extend: {
       colors: {
         'blackColor': '#000000',
