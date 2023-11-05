@@ -1,8 +1,7 @@
-
 const HomePage = () => {
     return (
         <div>
-            Hello From Home Page
+            hello from home
         </div>
     );
 };

@@ -1,20 +1,50 @@
+
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const SignUpPage = () => {
-    const {handelCreateUserWithEmailPassword}=useContext(AuthContext)
-    
-    const handelResiser=(e)=>{
+    const { handelCreateUserWithEmailPassword, hanelUpdateUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    // eslint-disable-next-line no-unused-vars
+    const location = useLocation();
+
+    const handelResiser = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
         const email = form.get('email');
         const photoURL = form.get('photoURL');
         const password = form.get('password');
-        console.log(email, name, photoURL, password)
-        handelCreateUserWithEmailPassword(email,password)
+        handelCreateUserWithEmailPassword(email, password)
+            .then((userCredential) => {
+                if (userCredential) {
+                    hanelUpdateUser(name, photoURL)
+                    navigate('/')
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'User has been Sign Out Successfully',
+                        showConfirmButton: false,
+                        timer: 1500,
+                        footer: `${email}`
+                    })
+                }
+            })
+            .catch((error) => {
+                const errorsms = error.message;
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    timer: 1500,
+                    footer: `${errorsms}`
+                })
+
+            });
     }
     return (
         <div className="flex justify-center items-center">
@@ -26,8 +56,8 @@ const SignUpPage = () => {
                     Enter your details For Explore More Feature.
                 </p>
                 <form
-                onSubmit={handelResiser}
-                 className="mt-8 mb-2 w-full md:w-80 max-w-screen-lg sm:w-96">
+                    onSubmit={handelResiser}
+                    className="mt-8 mb-2 w-full md:w-80 max-w-screen-lg sm:w-96">
                     <div className="mb-4 flex flex-col gap-6">
                         <div className="relative h-11 w-full min-w-[200px]">
                             <input

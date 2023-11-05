@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 import { createContext, useEffect, useState } from "react";
+import Swal from 'sweetalert2';
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
@@ -34,6 +35,41 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    // UPDATE USER WITH NAME AND EMAIL
+    const hanelUpdateUser = (name, photoURL) => {
+        setIsUserLoding(true)
+        updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photoURL
+
+        })
+    };
+
+    //HANDLE LOGOUT
+    const handelLogOut = () => {
+        signOut(auth)
+            .then((res) => {
+                if (res) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'User has been Sign Out Successfully',
+                        showConfirmButton: false,
+                        timer: 1500,
+                        footer: `${res}`
+                    })
+                }
+            })
+            .catch((error) => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    footer: `${error}`
+                })
+            });
+    }
+
     // MANGE THE USER 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -50,6 +86,8 @@ const AuthProvider = ({ children }) => {
     const Value = {
         user,
         isUserLoding,
+        hanelUpdateUser,
+        handelLogOut,
         handelLoginWithEmailPassword,
         handelCreateUserWithEmailPassword,
     }
