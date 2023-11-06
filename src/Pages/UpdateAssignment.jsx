@@ -1,57 +1,22 @@
-// import Swal from "sweetalert2";
-// import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
-// import axios from "axios";
 
 
-const CreateAssignmentPage = () => {
-    const navigate = useNavigate();
+const UpdateAssignment = () => {
     const { user } = useContext(AuthContext);
-    const [startDate, setStartDate] = useState(new Date());
     const handelAddProduct = (e) => {
         e.preventDefault();
         const formSubmitData = new FormData(e.currentTarget);
-        const assignmentCreatorEmail = user?.email;
+        const email = user?.email;
         const assignmentTitle = formSubmitData.get('title');
         const description = formSubmitData.get('description');
         const imageURL = formSubmitData.get('imageURL');
         const marks = formSubmitData.get('marks');
         const diffeculty = formSubmitData.get('diffeculty');
-        const lastDateOfSubmition = startDate;
-        const newAssignment = { assignmentCreatorEmail, assignmentTitle, description, imageURL, marks, diffeculty, lastDateOfSubmition}
-        fetch("http://localhost:5000/newAssignment",{
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newAssignment)
-        })
-        .then(res=> res.json())
-        .then(data=>{
-            if(data.insertedId){
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Your Assignment Uploded SuccessFully",
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-                  navigate('/assignment')
-            }else{
-                Swal.fire({
-                    position: "center",
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong!",
-                    timer: 1500
-                  });
-            }
-        })
+        const date = formSubmitData.get('date');
+        const status = formSubmitData.get('status');
+        const newAssignment = { email, assignmentTitle, description, imageURL, marks, diffeculty, date, status }
+        console.log(newAssignment)
     }
     return (
         <div className="my-10">
@@ -94,9 +59,15 @@ const CreateAssignmentPage = () => {
                                     </div>
                                     <div className="flex justify-start flex-col p-1 flex-1">
                                         <label htmlFor="submitDate">Deu Date:</label>
-                                        {/* <input required type="date" name="date" id="submitDate" placeholder="Select Date" className="p-1 rounded-sm mt-2 focus:outline-none" /> */}
-                                        <DatePicker id="submitDate" selected={startDate} onChange={(date) => setStartDate(date)} />
-
+                                        <input required type="date" name="date" id="submitDate" placeholder="Select Date" className="p-1 rounded-sm mt-2 focus:outline-none" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="flex justify-start flex-col p-1 flex-1">
+                                        <label htmlFor="assignmentStatus">Assignment Status:</label>
+                                        <select name="status" id="assignmentStatus" className="p-1 rounded-sm mt-2 focus:outline-none">
+                                            <option value="pending">Pending....</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div>
@@ -110,4 +81,5 @@ const CreateAssignmentPage = () => {
         </div>
     );
 };
-export default CreateAssignmentPage;
+
+export default UpdateAssignment;
