@@ -1,5 +1,3 @@
-// import Swal from "sweetalert2";
-// import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import DatePicker from "react-datepicker";
@@ -21,9 +19,9 @@ const CreateAssignmentPage = () => {
         const description = formSubmitData.get('description');
         const imageURL = formSubmitData.get('imageURL');
         const marks = formSubmitData.get('marks');
-        const diffeculty = formSubmitData.get('diffeculty');
+        const difficulty = formSubmitData.get('difficulty');
         const lastDateOfSubmition = startDate;
-        const newAssignment = { assignmentCreatorEmail, assignmentTitle, description, imageURL, marks, diffeculty, lastDateOfSubmition}
+        const newAssignment = { assignmentCreatorEmail, assignmentTitle, description, imageURL, marks, difficulty, lastDateOfSubmition}
         fetch("http://localhost:5000/newAssignment",{
             method: "POST",
             headers: {
@@ -66,27 +64,27 @@ const CreateAssignmentPage = () => {
                                 <div className="flex flex-col lg:flex-row gap-2  w-full">
                                     <div className="flex justify-start flex-col p-1 flex-1">
                                         <label htmlFor="assignmentTitle">Assignment Title:</label>
-                                        <input required type="text" name="title" id="assignmentTitle" placeholder="Enter Assignment Title" className="p-1 rounded-sm mt-2 focus:outline-none" />
+                                        <input required type="text" name="title" id="assignmentTitle" placeholder="Enter Assignment Title" className="p-1 rounded-sm mt-2 focus:outline-none bg-plataniamColor" />
                                     </div>
                                     <div className="flex justify-start flex-col p-1 flex-1">
                                         <label htmlFor="description">Description</label>
-                                        <input required type="text" name="description" id="description" placeholder="Enter Description" className="p-1 rounded-sm mt-2 focus:outline-none" />
+                                        <input required type="text" name="description" id="description" placeholder="Enter Description" className="p-1 rounded-sm mt-2 focus:outline-none bg-plataniamColor" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col lg:flex-row gap-2  w-full">
                                     <div className="flex justify-start flex-col p-1 flex-1">
                                         <label htmlFor="photoURL">Thumbnail Image URL:</label>
-                                        <input required type="text" name="imageURL" id="photoURL" placeholder="Image URL" className="p-1 rounded-sm mt-2 focus:outline-none" />
+                                        <input required type="text" name="imageURL" id="photoURL" placeholder="Image URL" className="p-1 rounded-sm mt-2 focus:outline-none bg-plataniamColor" />
                                     </div>
                                     <div className="flex justify-start flex-col p-1 flex-1">
                                         <label htmlFor="marks">Marks:</label>
-                                        <input required type="number" name="marks" id="marks" placeholder="Enter Marks" className="p-1 rounded-sm mt-2 focus:outline-none" />
+                                        <input required type="number" name="marks" id="marks" placeholder="Enter Marks" className="p-1 rounded-sm mt-2 focus:outline-none bg-plataniamColor" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col lg:flex-row gap-2  w-full">
                                     <div className="flex justify-start flex-col p-1 flex-1">
-                                        <label htmlFor="diffeculty">Assignment Difficulty:</label>
-                                        <select name="diffeculty" id="diffeculty" className="p-1 rounded-sm mt-2 focus:outline-none">
+                                        <label htmlFor="difficulty">Assignment Difficulty:</label>
+                                        <select name="difficulty" id="difficulty" className="p-1 rounded-sm mt-2 focus:outline-none bg-plataniamColor">
                                             <option value="easy">Easy</option>
                                             <option value="medium">Medium</option>
                                             <option value="hard">Hard</option>
@@ -95,7 +93,7 @@ const CreateAssignmentPage = () => {
                                     <div className="flex justify-start flex-col p-1 flex-1">
                                         <label htmlFor="submitDate">Deu Date:</label>
                                         {/* <input required type="date" name="date" id="submitDate" placeholder="Select Date" className="p-1 rounded-sm mt-2 focus:outline-none" /> */}
-                                        <DatePicker id="submitDate" selected={startDate} onChange={(date) => setStartDate(date)} />
+                                        <DatePicker id="submitDate" selected={startDate} onChange={(date) => setStartDate(date)} className="p-1 rounded-sm mt-2 focus:outline-none bg-plataniamColor w-full" />
 
                                     </div>
                                 </div>

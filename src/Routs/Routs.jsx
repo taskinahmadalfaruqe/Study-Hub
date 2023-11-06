@@ -32,9 +32,9 @@ const Routs =createBrowserRouter([
                 element: <CreateAssignmentPage></CreateAssignmentPage>
             },
             {
-                // path: '/updateAssignment/:id',
-                path: '/updateAssignment',
-                element: <UpdateAssignment></UpdateAssignment>
+                path: '/updateAssignment/:id',
+                element: <UpdateAssignment></UpdateAssignment>,
+                loader: ({params})=> fetch(`http://localhost:5000/newAssignment/${params.id}`)
             },
         ]
     },
