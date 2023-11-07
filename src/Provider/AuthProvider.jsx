@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
     // CREATE USER WITH EMAIL AND PASSWORD 
     const handelCreateUserWithEmailPassword = async (email, password) => {
         try {
-            setIsUserLoding(true)
+            setIsUserLoding(true);
             const newUser = await createUserWithEmailAndPassword(auth, email, password);
             setUser(newUser);
         } catch (error) {
@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
 
     // SIGN IN USER WITH EMAIL AND PASSWORD 
     const handelLoginWithEmailPassword = (email, password) => {
-        setIsUserLoding(true)
+        setIsUserLoding(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user),
-                    setIsUserLoding(false)
+                setIsUserLoding(false)
 
             } else {
                 unsubscribe()

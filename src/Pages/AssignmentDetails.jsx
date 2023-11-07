@@ -42,13 +42,13 @@ const AssignmentDetails = () => {
                     <div className="flex justify-between flex-col md:flex-row gap-5 md:pt-5 max-w-2xl mx-auto">
                         <button
                             onClick={()=>navigate("/assignment")}
-                            className="bg-blueColor p-2 w-full rounded-md text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-2xl font-bold gap-2">
+                            className="bg-blueColor font-Rancho p-2 w-full rounded-md text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-2xl font-bold gap-2">
                             <AiOutlineArrowLeft></AiOutlineArrowLeft>
                             <p>Back</p>
                         </button>
                         <button
                             onClick={()=> navigate(`/takeAssignment/${_id}`)}
-                            className="bg-blueColor p-2 w-full rounded-md  text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-2xl font-bold  gap-2">
+                            className="bg-blueColor font-Rancho p-2 w-full rounded-md  text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-2xl font-bold  gap-2">
                             <p>Take Assignment</p> 
                             <AiOutlineArrowRight></AiOutlineArrowRight>
                         </button>

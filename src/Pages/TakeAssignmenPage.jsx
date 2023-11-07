@@ -89,12 +89,8 @@ const TakeAssignmenPage = () => {
                                         placeholder="Enter Your Comment" 
                                         className="p-1 rounded-sm mt-2 focus:outline-none bg-plataniamColor" />
                                     </div>
-                                    {/* <div className="flex justify-start flex-col p-1 flex-1">
-                                        <label htmlFor="project">Add Your PDF Project:</label>
-                                        <input required type="file" name="project" id="project" className="p-1 rounded-sm mt-2 focus:outline-none bg-plataniamColor" />
-                                    </div> */}
                                     <div className="flex justify-start flex-col p-1 flex-1">
-                                        <label htmlFor="project">Add Your PDF Project:</label>
+                                        <label htmlFor="project">Add Your PDF Project Link:</label>
                                         <textarea 
                                         required 
                                         type="text" 
@@ -107,7 +103,7 @@ const TakeAssignmenPage = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <button type="submit" className="font-Rancho bg-blueColor text-white w-full border border-blueColor rounded-sm text-xl "> Submit Your Response</button>
+                                    <button type="submit" className="bg-blueColor font-Rancho p-2 w-full rounded-md  text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-3xl font-bold"> Submit Your Response</button>
                                 </div>
                             </form>
                         </div>
