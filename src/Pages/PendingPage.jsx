@@ -7,7 +7,7 @@ const PendingPage = () => {
     const { isUserLoding } = useContext(AuthContext);
     const [allPendaingAssignment, setAllPendingAssignment] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/submitedAssignment/status?status=pending")
+        fetch("https://study-hub-bice.vercel.app/submitedAssignment/status?status=pending")
             .then(res => res.json())
             .then(data => setAllPendingAssignment(data))
     }, [setAllPendingAssignment])
