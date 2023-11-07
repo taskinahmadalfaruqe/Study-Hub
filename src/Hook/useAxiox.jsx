@@ -1,6 +1,6 @@
 import axios from "axios";
 const instance = axios.create({
-    baseURL:"http://localhost:5000/newAssignment",
+    baseURL:"https://study-hub-bice.vercel.app/newAssignment",
     withCredentials: true,
 })
 const useAxios=()=>{

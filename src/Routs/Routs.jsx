@@ -8,6 +8,8 @@ import AssignmentPage from "../Pages/AssignmentPage";
 import MyAssignmentPage from "../Pages/MyAssignmentPage";
 import CreateAssignmentPage from "../Pages/CreateAssignmentPage";
 import UpdateAssignment from "../Pages/UpdateAssignment";
+import AssignmentDetails from "../Pages/AssignmentDetails";
+import TakeAssignmenPage from "../Pages/TakeAssignmenPage";
 
 const Routs =createBrowserRouter([
     {
@@ -34,7 +36,17 @@ const Routs =createBrowserRouter([
             {
                 path: '/updateAssignment/:id',
                 element: <UpdateAssignment></UpdateAssignment>,
-                loader: ({params})=> fetch(`http://localhost:5000/newAssignment/${params.id}`)
+                loader: ({params})=> fetch(`https://study-hub-bice.vercel.app/newAssignment/${params.id}`)
+            },
+            {
+                path: '/assignmentDetails/:id',
+                element: <AssignmentDetails></AssignmentDetails>,
+                loader: ({params})=> fetch(`https://study-hub-bice.vercel.app/newAssignment/${params.id}`)
+            },
+            {
+                path: '/takeAssignment/:id',
+                element: <TakeAssignmenPage></TakeAssignmenPage>,
+                loader: ({params})=> fetch(`https://study-hub-bice.vercel.app/newAssignment/${params.id}`)
             },
         ]
     },

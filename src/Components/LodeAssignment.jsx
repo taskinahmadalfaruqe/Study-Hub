@@ -27,7 +27,7 @@ const LodeAssignment = ({ singleAssignment }) => {
                 confirmButtonText: "Yes, delete it!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/newAssignment/${id}`, {
+                    fetch(`https://study-hub-bice.vercel.app/newAssignment/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
@@ -79,11 +79,11 @@ const LodeAssignment = ({ singleAssignment }) => {
     }
 
 
-    const handleDetails = (id, email) => {
-        console.log("details", id, email)
+    const handleDetails = (id) => {
+        navigate(`/assignmentDetails/${id}`)
     }
     return (
-        <div className='min-h-20 bg-red-50 rounded p-2 flex gap-2 flex-col justify-between border border-blueColor relative'>
+        <div className='min-h-20 rounded p-2 flex gap-2 flex-col justify-between border border-blueColor relative transform transition-transform hover:scale-105 hover:z-10'>
             <div className='absolute top-1 right-1'>
                 <button
                     onClick={() => handelDelete(_id, assignmentCreatorEmail)}
@@ -138,7 +138,7 @@ const LodeAssignment = ({ singleAssignment }) => {
                         <MdEdit></MdEdit>
                     </button>
                     <button
-                        onClick={() => handleDetails(_id, assignmentCreatorEmail)}
+                        onClick={() => handleDetails(_id)}
                         className="bg-blueColor p-2 w-full rounded-md  text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-3xl font-bold">
                         <BsFillEyeFill></BsFillEyeFill>
                     </button>

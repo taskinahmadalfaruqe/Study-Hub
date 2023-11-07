@@ -2,7 +2,7 @@
 
 const MyAssignmentPage = () => {
     return (
-        <div>
+        <div className="container">
             assignment my
             <div>
                 <div className="flex justify-start flex-col p-1 flex-1">

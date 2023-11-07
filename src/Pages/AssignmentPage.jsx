@@ -9,7 +9,7 @@ const AssignmentPage = () => {
 
 
     useEffect(() => {
-        let apiUrl = "http://localhost:5000/newAssignment";
+        let apiUrl = "https://study-hub-bice.vercel.app/newAssignment";
 
         if (difficultyStatus) {
             apiUrl += `?difficulty=${difficultyStatus}`;

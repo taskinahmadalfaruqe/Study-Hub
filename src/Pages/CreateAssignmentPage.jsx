@@ -22,7 +22,7 @@ const CreateAssignmentPage = () => {
         const difficulty = formSubmitData.get('difficulty');
         const lastDateOfSubmition = startDate;
         const newAssignment = { assignmentCreatorEmail, assignmentTitle, description, imageURL, marks, difficulty, lastDateOfSubmition}
-        fetch("http://localhost:5000/newAssignment",{
+        fetch("https://study-hub-bice.vercel.app/newAssignment",{
             method: "POST",
             headers: {
                 'content-type': 'application/json'

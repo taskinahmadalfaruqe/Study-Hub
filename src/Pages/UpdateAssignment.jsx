@@ -32,7 +32,7 @@ const UpdateAssignment = () => {
             confirmButtonText: "Yes, Update it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/newAssignment/${_id}`, {
+                fetch(`https://study-hub-bice.vercel.app/newAssignment/${_id}`, {
                     method: "PATCH",
                     headers: {
                         'content-type': "application/json"

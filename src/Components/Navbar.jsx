@@ -70,7 +70,7 @@ const Navbar = () => {
 
                             {/* ABSOLUTE PART  */}
                             {
-                                clicked ? <div className="top-0 left-[50%] -translate-x-[50%] -xl:translate-x-0  xl:top-14 xl:right-0 xl:w-[25vw] absolute z-10 border border-blueColor bg-plataniamColor rounded-md p-5 text-center  flex justify-center items-center gap-3 flex-col text-blackColor text-lg font-semibold">
+                                clicked ? <div className="top-0 left-[50%] -translate-x-[50%] -xl:translate-x-0  xl:top-14 xl:right-0 xl:w-[25vw] absolute z-20 border border-blueColor bg-plataniamColor rounded-md p-5 text-center  flex justify-center items-center gap-3 flex-col text-blackColor text-lg font-semibold">
                                     <div className="flex justify-end items-center w-full">
                                         <AiOutlineClose className="text-3xl font-bold text-whiteColor cursor-pointer bg-blueColor rounded-md hover:bg-whiteColor hover:text-blueColor border border-blueColor transition-all duration-300"></AiOutlineClose>
                                     </div>
