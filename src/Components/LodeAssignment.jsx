@@ -10,11 +10,12 @@ import {  useNavigate } from "react-router-dom"
 const LodeAssignment = ({ singleAssignment }) => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
-    const userEmail = user.email;
+    
     const { _id, assignmentCreatorEmail, assignmentTitle, description, difficulty, imageURL, lastDateOfSubmition, marks, lastDateOfSubmission } = singleAssignment;
 
     // HANDLE DELETE AN ASSIGNMENT 
     const handelDelete = (id, email) => {
+        const userEmail = user?.email;
         const query = userEmail === email;
         if (query) {
             Swal.fire({
@@ -65,6 +66,7 @@ const LodeAssignment = ({ singleAssignment }) => {
 
     // HANDEL UPDATE AN ASSIGNMENT 
     const handleUpdate = (id, email) => {
+        const userEmail = user?.email;
         const query = userEmail === email;
         if (!query) {
             Swal.fire({

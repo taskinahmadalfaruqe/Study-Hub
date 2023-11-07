@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { LiaBarsSolid } from "react-icons/lia";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import {AiOutlineClose} from "react-icons/ai"
+import { AiOutlineClose } from "react-icons/ai"
 
 const Navbar = () => {
     const { user, handelLogOut } = useContext(AuthContext);
@@ -129,32 +129,32 @@ const Navbar = () => {
     );
 
     return (
-        <div className="bg-plataniamColor border-b border-orangeColor "> 
-            <div className="container max-w-7xl font-Oswald flex justify-between items-center ">
-            <div className="  logo  text-2xl font-bold text-blueColor">
-                <Link to={"/"}>
-                    <img src={"https://i.ibb.co/4tHXVTF/android-chrome-192x192.png"}  className="w-20" alt="logo" />
-                </Link>
-            </div>
+        <div className="bg-plataniamColor border-b border-orangeColor ">
+            <div className="container  flex justify-between items-center">
+                <div className="  logo  text-2xl font-bold text-blueColor">
+                    <Link to={"/"}>
+                        <img src={"https://i.ibb.co/4tHXVTF/android-chrome-192x192.png"} className="w-20" alt="logo" />
+                    </Link>
+                </div>
 
-            <div className="dropdown">
-                <label
-                    tabIndex={0}
-                    className="btn btn-ghost xl:hidden text-2xl bg-plataniamColor text-blueColor"
-                >
-                    <LiaBarsSolid></LiaBarsSolid>
-                </label>
-                <ul
-                    tabIndex={0}
-                    className="dropdown-content rounded-md  z-[10000] p-3 shadow bg-slate-100  absolute top-14 w-[100vw] md:w-[60vw] lg:w-[30vw] text-center right-0"
-                >
-                    {NavBar}
-                </ul>
+                <div className="dropdown">
+                    <label
+                        tabIndex={0}
+                        className="btn btn-ghost xl:hidden text-2xl bg-plataniamColor text-blueColor"
+                    >
+                        <LiaBarsSolid></LiaBarsSolid>
+                    </label>
+                    <ul
+                        tabIndex={0}
+                        className="dropdown-content rounded-md  z-[10000] p-3 shadow bg-slate-100  absolute top-14 w-[100vw] md:w-[60vw] lg:w-[30vw] text-center right-0"
+                    >
+                        {NavBar}
+                    </ul>
+                </div>
+                <div className="hidden xl:flex">
+                    <ul className="menu menu-horizontal px-1">{NavBar}</ul>
+                </div>
             </div>
-            <div className="hidden xl:flex">
-                <ul className="menu menu-horizontal px-1">{NavBar}</ul>
-            </div>
-        </div>
         </div>
     );
 };

@@ -13,7 +13,7 @@ const MyAssignmentPage = () => {
     },[userEmail])
     if (isUserLoding) {
         return <div className="flex justify-center items-center h-[100vh] w-full">
-            <span className="loading loading-spinner loading-lg text-red-500"></span>
+            <span className="loading loading-spinner loading-lg text-orangeColor"></span>
         </div>
     }
     console.log(mysubmit.length)

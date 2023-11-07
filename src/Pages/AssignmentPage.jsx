@@ -1,9 +1,7 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
+import { useEffect, useState } from "react";
 import LodeAssignment from "../Components/LodeAssignment";
 
 const AssignmentPage = () => {
-    const { isUserLoding } = useContext(AuthContext);
     const [allAssignment, setAllAssignment] = useState([]);
     const [difficultyStatus, setDifficultyStatus] = useState("");
 
@@ -20,9 +18,9 @@ const AssignmentPage = () => {
             .then((data) => setAllAssignment(data));
     }, [difficultyStatus]);
 
-    if (isUserLoding) {
+    if (allAssignment.length == 0) {
         return <div className="flex justify-center items-center h-[100vh] w-full">
-            <span className="loading loading-spinner loading-lg text-red-500"></span>
+            <span className="loading loading-spinner loading-lg text-orangeColor"></span>
         </div>
     }
 
