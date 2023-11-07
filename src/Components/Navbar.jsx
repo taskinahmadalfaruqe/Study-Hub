@@ -45,6 +45,17 @@ const Navbar = () => {
                 My Submition
             </NavLink>
             <NavLink
+                to={"/pendingAssignment"}
+                className={({ isActive }) =>
+                    isActive
+                        ? "bg-blueColor font-semibold text-lg uppercase text-whiteColor p-1 px-3 rounded-md"
+                        : " hover:bg-plataniamColor font-semibold text-lg uppercase text-blackColor p-1 px-3 round" +
+                        "ed-md"
+                }
+            >
+                Response
+            </NavLink>
+            <NavLink
                 to={"/createAssignment"}
                 className={({ isActive }) =>
                     isActive

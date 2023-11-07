@@ -10,6 +10,7 @@ import CreateAssignmentPage from "../Pages/CreateAssignmentPage";
 import UpdateAssignment from "../Pages/UpdateAssignment";
 import AssignmentDetails from "../Pages/AssignmentDetails";
 import TakeAssignmenPage from "../Pages/TakeAssignmenPage";
+import PendingPage from "../Pages/PendingPage";
 
 const Routs =createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const Routs =createBrowserRouter([
             {
                 path: '/createAssignment',
                 element: <CreateAssignmentPage></CreateAssignmentPage>
+            },
+            {
+                path: '/pendingAssignment',
+                element: <PendingPage></PendingPage>
             },
             {
                 path: '/updateAssignment/:id',

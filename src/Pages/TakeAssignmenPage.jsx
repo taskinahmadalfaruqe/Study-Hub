@@ -36,20 +36,13 @@ const TakeAssignmenPage = () => {
             imageURL,
             status: "pending",
         }
-        fetch("http://localhost:5000/submitedAssignment", {
+        fetch("https://study-hub-bice.vercel.app/submitedAssignment", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(submitAssignmentData)
         })
-            // fetch("https://study-hub-bice.vercel.app/submitedAssignment", {
-            //     method: "POST",
-            //     headers: {
-            //         'content-type': 'application/json'
-            //     },
-            //     body: JSON.stringify(submitAssignmentData)
-            // })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
