@@ -18,7 +18,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                     isActive
                         ? "bg-blueColor font-semibold text-lg uppercase text-whiteColor p-1 px-3 rounded-md"
-                        : " hover:bg-plataniamColor font-semibold text-lg uppercase text-blackColor p-1 px-3 round" +
+                        : " hover:bg-whiteColor font-semibold text-lg uppercase text-blackColor p-1 px-3 round" +
                         "ed-md"
                 }
             >
@@ -29,7 +29,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                     isActive
                         ? "bg-blueColor font-semibold text-lg uppercase text-whiteColor p-1 px-3 rounded-md"
-                        : " hover:bg-plataniamColor font-semibold text-lg uppercase text-blackColor p-1 px-3 rounded-md"
+                        : " hover:bg-whiteColor font-semibold text-lg uppercase text-blackColor p-1 px-3 rounded-md"
                 }
             >Assignment
             </NavLink>
@@ -38,7 +38,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                     isActive
                         ? "bg-blueColor font-semibold text-lg uppercase text-whiteColor p-1 px-3 rounded-md"
-                        : " hover:bg-plataniamColor font-semibold text-lg uppercase text-blackColor p-1 px-3 round" +
+                        : " hover:bg-whiteColor font-semibold text-lg uppercase text-blackColor p-1 px-3 round" +
                         "ed-md"
                 }
             >
@@ -49,18 +49,18 @@ const Navbar = () => {
                 className={({ isActive }) =>
                     isActive
                         ? "bg-blueColor font-semibold text-lg uppercase text-whiteColor p-1 px-3 rounded-md"
-                        : " hover:bg-plataniamColor font-semibold text-lg uppercase text-blackColor p-1 px-3 round" +
+                        : " hover:bg-whiteColor font-semibold text-lg uppercase text-blackColor p-1 px-3 round" +
                         "ed-md"
                 }
             >
-                Response
+                Pending Response
             </NavLink>
             <NavLink
                 to={"/createAssignment"}
                 className={({ isActive }) =>
                     isActive
                         ? "bg-blueColor font-semibold text-lg uppercase text-whiteColor p-1 px-3 rounded-md"
-                        : " hover:bg-plataniamColor font-semibold text-lg uppercase text-blackColor p-1 px-3 round" +
+                        : " hover:bg-whiteColor font-semibold text-lg uppercase text-blackColor p-1 px-3 round" +
                         "ed-md"
                 }
             >
