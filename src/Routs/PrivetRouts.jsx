@@ -4,18 +4,19 @@ import { AuthContext } from "../Provider/AuthProvider";
 import PropTypes from 'prop-types'
 
 const PrivetRouts = ({ children }) => {
-    const { user, isUserLoding } = useContext(AuthContext);
+    const { user,isUserLoding } = useContext(AuthContext);
     const location = useLocation();
-    console.log(location)
 
     if (user) {
-        return children    
+        return children
+    } 
+    if(isUserLoding){
+        return (<div className="flex justify-center items-center h-[100vh] w-full">
+            <span className="loading loading-spinner loading-lg text-red-500"></span>
+        </div>)
+    }else{
+        <Navigate  state={location.pathname} to={"/login"}></Navigate>
     }
-    // if (isUserLoding) {
-    //     return (<div className="flex justify-center items-center h-[100vh] w-full">
-    //         <span className="loading loading-spinner loading-lg text-orangeColor"></span>
-    //     </div>)
-    // }
     return <Navigate  state={location.pathname} to={"/login"}></Navigate>
 };
 

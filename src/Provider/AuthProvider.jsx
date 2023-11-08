@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 import { createContext, useEffect, useState } from "react";
 import Swal from 'sweetalert2';
@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
         try {
             setIsUserLoding(true);
             const newUser = await createUserWithEmailAndPassword(auth, email, password);
-            setUser(newUser);
+            setUser(newUser.user);
         } catch (error) {
             console.error(error.message);
         }
@@ -35,9 +35,14 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    // SIGN IN WITH GOOGEL
+    const handelGoogleSignIN = (googleProvider) => {
+        setIsUserLoding(true)
+        return signInWithPopup(auth, googleProvider)
+    }
+
     // UPDATE USER WITH NAME AND EMAIL
     const hanelUpdateUser = (name, photoURL) => {
-        setIsUserLoding(true)
         updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photoURL
@@ -45,15 +50,15 @@ const AuthProvider = ({ children }) => {
         })
     };
 
-    //HANDLE LOGOUT
-    const handelLogOut = () => {
+    // SIGN OUT USER FROM SITE
+    const handelSignOut = () => {
         signOut(auth)
             .then((res) => {
                 if (res) {
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'User has been Sign Out Successfully',
+                        title: 'User has been Sign In Successfully',
                         showConfirmButton: false,
                         timer: 1500,
                         footer: `${res}`
@@ -68,26 +73,26 @@ const AuthProvider = ({ children }) => {
                     footer: `${error}`
                 })
             });
-    }
+    };
 
-    // MANGE THE USER 
+    //SET USER
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUser(user),
-                setIsUserLoding(false)
+            setUser(user);
+            setIsUserLoding(false)
+        });
 
-            } else {
-                unsubscribe()
-            }
-        })
-    }, [])
+        return () => {
+            unsubscribe();
+        };
+    }, []);
 
     const Value = {
         user,
         isUserLoding,
+        handelGoogleSignIN,
         hanelUpdateUser,
-        handelLogOut,
+        handelSignOut,
         handelLoginWithEmailPassword,
         handelCreateUserWithEmailPassword,
     }

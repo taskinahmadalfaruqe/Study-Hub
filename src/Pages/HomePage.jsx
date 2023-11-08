@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import Banner from "../Components/Banner";
 import LodeAssignment from "../Components/LodeAssignment";

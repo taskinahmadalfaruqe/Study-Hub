@@ -60,17 +60,18 @@ const Routs =createBrowserRouter([
                 element: <PrivetRouts><TakeAssignmenPage></TakeAssignmenPage></PrivetRouts>,
                 loader: ({params})=> fetch(`https://study-hub-bice.vercel.app/newAssignment/${params.id}`)
             },
+            {
+                path: "/login",
+                element: <LoginPage></LoginPage>,
+                errorElement: <ErrorPage></ErrorPage>,
+            },
+            {
+                path: "/signup",
+                element: <SignUpPage></SignUpPage>,
+                errorElement: <ErrorPage></ErrorPage>,
+            },
         ]
     },
-    {
-        path: "/login",
-        element: <LoginPage></LoginPage>,
-        errorElement: <ErrorPage></ErrorPage>,
-    },
-    {
-        path: "/signup",
-        element: <SignUpPage></SignUpPage>,
-        errorElement: <ErrorPage></ErrorPage>,
-    },
+   
 ])
 export default Routs;

@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { AiOutlineClose } from "react-icons/ai"
 
 const Navbar = () => {
-    const { user, handelLogOut } = useContext(AuthContext);
+    const { user, handelSignOut } = useContext(AuthContext);
     const [clicked, setClicked] = useState(false)
 
     const handelUserInfo = () => {
@@ -97,7 +97,7 @@ const Navbar = () => {
                                     </div>
                                     <Link>
                                         <button
-                                            onClick={handelLogOut}
+                                            onClick={handelSignOut}
                                             className="btn border-blueColor bg-blueColor hover:bg-whiteColor hover:text-blueColor hover:border-blueColor font-semibold text-lg uppercase text-whiteColor p-1 px-3 rounded-md"
                                         >
                                             logout
@@ -110,7 +110,7 @@ const Navbar = () => {
                         </div>
                         <Link>
                             <button
-                                onClick={handelLogOut}
+                                onClick={handelSignOut}
                                 className="btn border-blueColor bg-blueColor hover:bg-whiteColor hover:text-blueColor hover:border-blueColor font-semibold text-lg uppercase text-whiteColor p-1 px-3 rounded-md"
                             >
                                 logout

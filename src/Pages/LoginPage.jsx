@@ -1,26 +1,63 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { FcGoogle } from 'react-icons/fc'
+import { GoogleAuthProvider } from "firebase/auth";
 
 /* eslint-disable react/no-unescaped-entities */
 const LoginPage = () => {
-  const { handelLoginWithEmailPassword } = useContext(AuthContext);
+  const { handelLoginWithEmailPassword,handelGoogleSignIN } = useContext(AuthContext);
+  const googleProvider= new(GoogleAuthProvider)
+
+
+  const location = useLocation();
   const navigate = useNavigate()
+
+  const loginWithGoogle=()=>{
+    handelGoogleSignIN(googleProvider)
+    .then((userCredential) => {
+
+      if (userCredential) {
+        navigate(location?.state ? location.state : "/");
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'User has been Login Successfully',
+          showConfirmButton: false,
+          timer: 1500,
+        })
+      }
+    })
+    .catch((error) => {
+      const errorsms = error.message;
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        timer: 1500,
+        footer: `${errorsms}`
+      })
+
+    });
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email");
     const password = formData.get("password");
+
     handelLoginWithEmailPassword(email, password)
+
       .then((userCredential) => {
-        navigate(location?.pathname ? location.pathname : "/");
+
         if (userCredential) {
+          navigate(location?.state ? location.state : "/");
           Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'User has been Sign Out Successfully',
+            title: 'User has been Login Successfully',
             showConfirmButton: false,
             timer: 1500,
             footer: `${email}`
@@ -38,10 +75,9 @@ const LoginPage = () => {
         })
 
       });
-
   }
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex flex-col justify-center items-center">
       <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-blackColor shadow-none">
         <h4 className="block font-sans text-2xl text-center font-semibold leading-snug tracking-normal text-orangeColor antialiased">
           Sign In
@@ -100,6 +136,16 @@ const LoginPage = () => {
             </Link>
           </p>
         </form>
+      </div>
+      <div>
+        <button
+        onClick={loginWithGoogle}
+          className=" flex justify-center items-center gap-3 mt-6  w-full select-none rounded-lg bg-blueColor py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blueColor/20 transition-all hover:shadow-lg hover:shadow-blueColor/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="submit"
+          data-ripple-light="true"
+        >
+          Contenu With Google <FcGoogle className="text-2xl"></FcGoogle>
+        </button>
       </div>
     </div>
   );
