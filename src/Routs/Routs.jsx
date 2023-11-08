@@ -11,6 +11,7 @@ import UpdateAssignment from "../Pages/UpdateAssignment";
 import AssignmentDetails from "../Pages/AssignmentDetails";
 import TakeAssignmenPage from "../Pages/TakeAssignmenPage";
 import PendingPage from "../Pages/PendingPage";
+import GiveMarkPage from "../Pages/GiveMarkPage";
 
 const Routs =createBrowserRouter([
     {
@@ -37,6 +38,11 @@ const Routs =createBrowserRouter([
             {
                 path: '/pendingAssignment',
                 element: <PendingPage></PendingPage>
+            },
+            {
+                path: '/givMark/:id',
+                element: <GiveMarkPage></GiveMarkPage>,
+                loader: ({params})=> fetch(`https://study-hub-bice.vercel.app/submitedAssignment/${params.id}`)
             },
             {
                 path: '/updateAssignment/:id',

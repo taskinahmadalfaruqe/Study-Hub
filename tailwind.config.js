@@ -26,6 +26,7 @@ export default {
         'blueColor': '#214185',
         'orangeColor': '#FCA311',
         'plataniamColor': '#E5E5E5',
+        'greenColor': '#15803d',
       },
     },
   },
