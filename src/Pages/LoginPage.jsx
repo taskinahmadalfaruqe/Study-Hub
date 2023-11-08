@@ -4,6 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FcGoogle } from 'react-icons/fc'
 import { GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 /* eslint-disable react/no-unescaped-entities */
 const LoginPage = () => {
@@ -53,7 +54,11 @@ const LoginPage = () => {
       .then((userCredential) => {
 
         if (userCredential) {
-          navigate(location?.state ? location.state : "/");
+          // navigate(location?.state ? location.state : "/");
+          const user={email};
+          axios.post("http://localhost:5000/jwt", user)
+          .then(res=>console.log(res.data))
+            
           Swal.fire({
             position: 'center',
             icon: 'success',

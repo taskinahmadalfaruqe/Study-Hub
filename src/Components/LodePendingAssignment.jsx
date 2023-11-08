@@ -14,10 +14,10 @@ const LodePendingAssignment = ({ singleAssignment }) => {
         submitBy,
         submitDate
     } = singleAssignment;
-    console.log(singleAssignment)
+   
     const handleGivMarks=(id)=>{
         navigate(`/givMark/${id}`)
-        console.log("button clicked",id)
+        
     }
     return (
         <div className="border border-orangeColor p-3 rounded-md text-center flex gap-5 justify-between flex-col lg:flex-row">

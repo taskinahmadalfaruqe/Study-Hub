@@ -17,7 +17,6 @@ const MyAssignmentPage = () => {
             <span className="loading loading-spinner loading-lg text-orangeColor"></span>
         </div>
     }
-    console.log(mysubmit)
     return (
         <div className="container">
             <h2 className="text-center uppercase mx-auto text-blueColor mt-5 text-2xl font-semibold max-w-2xl">All Assignment Here That You Submit Yeat Now</h2>

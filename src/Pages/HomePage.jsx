@@ -12,12 +12,12 @@ const HomePage = () => {
         fetch('https://study-hub-bice.vercel.app/newAssignment')
             .then(res => res.json())
             .then(data => {
-                if (data.length > 6) {
-                    const newArray = data.slice(0, 6)
+                if (data?.assignments.length > 6) {
+                    const newArray = data.assignments.slice(0, 6)
                     setShowAssignment(newArray)
 
                 } else {
-                    setShowAssignment(data)
+                    setShowAssignment(data.assignments)
                 }
             })
     }, [])

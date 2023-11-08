@@ -10,7 +10,7 @@ const AssignmentPage = () => {
 
 
     useEffect(() => {
-        let apiUrl = `http://localhost:5000/assignments?page=${page}&limit=6&difficulty=${difficultyStatus}`;
+        let apiUrl = `https://study-hub-bice.vercel.app/newAssignment?page=${page}&limit=6&difficulty=${difficultyStatus}`;
         fetch(apiUrl)
             .then((res) => res.json())
             .then((data) => {

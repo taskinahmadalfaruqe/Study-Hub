@@ -25,7 +25,6 @@ const TakeAssignmenPage = () => {
         const formSubmitData = new FormData(e.currentTarget);
         const note = formSubmitData.get('note');
         const projectFile  = formSubmitData.get('project');
-        console.log(projectFile )
         const submitAssignmentData = {
             assignmentTitle,
             submitBy,
