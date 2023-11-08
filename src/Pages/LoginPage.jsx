@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 /* eslint-disable react/no-unescaped-entities */
 const LoginPage = () => {
   const { handelLoginWithEmailPassword } = useContext(AuthContext);
-  const navigate= useNavigate()
+  const navigate = useNavigate()
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,8 +15,8 @@ const LoginPage = () => {
     const password = formData.get("password");
     handelLoginWithEmailPassword(email, password)
       .then((userCredential) => {
+        navigate(location?.pathname ? location.pathname : "/");
         if (userCredential) {
-          navigate('/')
           Swal.fire({
             position: 'center',
             icon: 'success',
@@ -40,7 +40,6 @@ const LoginPage = () => {
       });
 
   }
-
   return (
     <div className="flex justify-center items-center">
       <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-blackColor shadow-none">
@@ -92,6 +91,7 @@ const LoginPage = () => {
           <p className="mt-4  text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased flex gap-1">
             Don't have an account?
             <Link
+              state={location.state}
               to='/signup'
               className="font-medium text-orangeColor transition-colors hover:text-blueColor"
 

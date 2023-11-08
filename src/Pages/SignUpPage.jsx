@@ -8,8 +8,6 @@ import Swal from "sweetalert2";
 const SignUpPage = () => {
     const { handelCreateUserWithEmailPassword, hanelUpdateUser } = useContext(AuthContext);
     const navigate = useNavigate();
-
-    // eslint-disable-next-line no-unused-vars
     const location = useLocation();
 
     const handelResiser = (e) => {
@@ -21,16 +19,15 @@ const SignUpPage = () => {
         const password = form.get('password');
         handelCreateUserWithEmailPassword(email, password)
             .then((userCredential) => {
+                hanelUpdateUser(name, photoURL)
+                navigate(location.state ? location.state : "/");
                 if (userCredential) {
-                    hanelUpdateUser(name, photoURL)
-                    navigate('/')
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
                         title: 'User has been Sign Out Successfully',
                         showConfirmButton: false,
                         timer: 1500,
-                        footer: `${email}`
                     })
                 }
             })

@@ -12,6 +12,7 @@ import AssignmentDetails from "../Pages/AssignmentDetails";
 import TakeAssignmenPage from "../Pages/TakeAssignmenPage";
 import PendingPage from "../Pages/PendingPage";
 import GiveMarkPage from "../Pages/GiveMarkPage";
+import PrivetRouts from "./PrivetRouts";
 
 const Routs =createBrowserRouter([
     {
@@ -29,19 +30,19 @@ const Routs =createBrowserRouter([
             },
             {
                 path: '/myAssignment',
-                element: <MyAssignmentPage></MyAssignmentPage>
+                element: <PrivetRouts><MyAssignmentPage></MyAssignmentPage></PrivetRouts>
             },
             {
                 path: '/createAssignment',
-                element: <CreateAssignmentPage></CreateAssignmentPage>
+                element: <PrivetRouts><CreateAssignmentPage></CreateAssignmentPage></PrivetRouts>
             },
             {
                 path: '/pendingAssignment',
-                element: <PendingPage></PendingPage>
+                element: <PrivetRouts><PendingPage></PendingPage></PrivetRouts>
             },
             {
                 path: '/givMark/:id',
-                element: <GiveMarkPage></GiveMarkPage>,
+                element: <PrivetRouts><GiveMarkPage></GiveMarkPage></PrivetRouts>,
                 loader: ({params})=> fetch(`https://study-hub-bice.vercel.app/submitedAssignment/${params.id}`)
             },
             {
@@ -56,7 +57,7 @@ const Routs =createBrowserRouter([
             },
             {
                 path: '/takeAssignment/:id',
-                element: <TakeAssignmenPage></TakeAssignmenPage>,
+                element: <PrivetRouts><TakeAssignmenPage></TakeAssignmenPage></PrivetRouts>,
                 loader: ({params})=> fetch(`https://study-hub-bice.vercel.app/newAssignment/${params.id}`)
             },
         ]
