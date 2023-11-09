@@ -1,8 +1,24 @@
-# React + Vite
+# Study Hub
+---
+---
+# ASSIGNMENT CATAGORY: assignment_category_0001
+---
+---
+[Live Link:](breezy-recess.surge.sh "WEB LINK")
+---
+---
+[GITHUB SERVER SITE LINK:](https://github.com/Porgramming-Hero-web-course/b8a11-server-side-taskinahmadalfaruqe "GITHUB SERVER SITE LINK")
+---
+---
+[GITHUB CLIENT SIDE LINK:](https://github.com/Porgramming-Hero-web-course/b8a11-client-side-taskinahmadalfaruqe "GITHUB CLIENT SIDE LINK")
+---
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Add 5 Functional In My Project
+---
+* EVERY ONE SEE COURSE AND DETAILS.
+* ONLY VALID USER CAN TAKE ASSIGNMENT, AND CREATE.
+* AFTER SUBMIT ASSIGNMENT KNOW ONE ABLE TO UPDATE IT.
+* YOU CAN LOGIN WITH EMAIL OR GOOGLE.
+* ONLY THE ASSIGNMENT CREATOR IS ABLE TO UPDATE ASSIGNMENT OR DELETE IT.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

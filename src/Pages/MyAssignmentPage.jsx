@@ -1,17 +1,42 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import LodeMySubmition from "../Components/LodeMySubmition";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 
 const MyAssignmentPage = () => {
-    const { user, isUserLoding } = useContext(AuthContext);
+    const { user, isUserLoding,handelSignOut } = useContext(AuthContext);
     const [mysubmit, setMySubmit] = useState([]);
     const userEmail = user?.email;
     useEffect(() => {
-        fetch(`https://study-hub-bice.vercel.app/submitedAssignment?user=${userEmail}`)
-            .then(res => res.json())
-            .then(data => setMySubmit(data))
-    }, [userEmail])
+        const url = `https://study-hub-bice.vercel.app/submitedAssignment?user=${userEmail}`
+        
+        axios.get(url)
+            .then(async (res) => {
+                setMySubmit(res.data);
+            })
+            .catch((error) => {
+                if (error.response && error.response.status === 401) {
+                    handelSignOut();
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Request Failed with Status 401',
+                        text: error.message,
+                        footer: 'Unauthorized. You may need to log in again.'
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                        timer: 1500,
+                        footer: error.message
+                    });
+                }
+            });
+        
+    }, [userEmail,handelSignOut])
     if (isUserLoding) {
         return <div className="flex justify-center items-center h-[100vh] w-full">
             <span className="loading loading-spinner loading-lg text-orangeColor"></span>

@@ -8,57 +8,27 @@ import axios from "axios";
 
 /* eslint-disable react/no-unescaped-entities */
 const LoginPage = () => {
-  const { handelLoginWithEmailPassword,handelGoogleSignIN } = useContext(AuthContext);
-  const googleProvider= new(GoogleAuthProvider)
+  const { handelLoginWithEmailPassword, handelGoogleSignIN } = useContext(AuthContext);
+  const googleProvider = new (GoogleAuthProvider)
 
 
   const location = useLocation();
   const navigate = useNavigate()
 
-  const loginWithGoogle=()=>{
+  const loginWithGoogle = () => {
     handelGoogleSignIN(googleProvider)
-    .then((userCredential) => {
-
-      if (userCredential) {
-        navigate(location?.state ? location.state : "/");
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'User has been Login Successfully',
-          showConfirmButton: false,
-          timer: 1500,
-        })
-      }
-    })
-    .catch((error) => {
-      const errorsms = error.message;
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong!',
-        timer: 1500,
-        footer: `${errorsms}`
-      })
-
-    });
-  }
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const email = formData.get("email");
-    const password = formData.get("password");
-
-    handelLoginWithEmailPassword(email, password)
-
       .then((userCredential) => {
-
+        const email = userCredential.user.email
         if (userCredential) {
-          // navigate(location?.state ? location.state : "/");
-          const user={email};
-          axios.post("http://localhost:5000/jwt", user)
-          .then(res=>console.log(res.data))
-            
+          navigate(location?.state ? location.state : "/");
+          const url = 'https://study-hub-bice.vercel.app/access-token';
+          axios.post(url, email, { withCredentials: true })
+            .then(response => {
+              console.log('Response data:', response.data);
+            })
+            .catch(error => {
+              console.error('An error occurred:', error);
+            });
           Swal.fire({
             position: 'center',
             icon: 'success',
@@ -80,6 +50,52 @@ const LoginPage = () => {
         })
 
       });
+  }
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    handelLoginWithEmailPassword(email, password)
+
+      .then((userCredential) => {
+
+        if (userCredential) {
+          navigate(location?.state ? location.state : "/");
+          const user = { email };
+          const url = 'https://study-hub-bice.vercel.app/access-token';
+          axios.post(url, user, { withCredentials: true })
+            .then(response => {
+              console.log('Response data:', response.data);
+            })
+            .catch(error => {
+              console.error('An error occurred:', error);
+            });
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'User has been Login Successfully',
+            showConfirmButton: false,
+            timer: 1500,
+            footer: `${email}`
+          })
+        }
+      })
+      .catch((error) => {
+        const errorsms = error.message;
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          timer: 1500,
+          footer: `${errorsms}`
+        })
+
+      });
+
+
   }
   return (
     <div className="flex flex-col justify-center items-center">
@@ -144,7 +160,7 @@ const LoginPage = () => {
       </div>
       <div>
         <button
-        onClick={loginWithGoogle}
+          onClick={loginWithGoogle}
           className=" flex justify-center items-center gap-3 mt-6  w-full select-none rounded-lg bg-blueColor py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blueColor/20 transition-all hover:shadow-lg hover:shadow-blueColor/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="submit"
           data-ripple-light="true"

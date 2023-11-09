@@ -49,7 +49,6 @@ const GiveMarkPage = () => {
                 submitBy,
                 submitDate
             };
-            console.log(sendNewResponse);
             fetch(`https://study-hub-bice.vercel.app/submitedAssignment/${_id}`, {
                 method: "PATCH",
                 headers: {
@@ -59,6 +58,7 @@ const GiveMarkPage = () => {
             })
                 .then(res => res.json())
                 .then(data => {
+                    console.log(data)
                     if (data.modifiedCount == 1) {
                         navigate('/assignment')
                         Swal.fire({
@@ -84,8 +84,6 @@ const GiveMarkPage = () => {
                 timer: 2500
             });
         }
-
-
     };
 
     return (
