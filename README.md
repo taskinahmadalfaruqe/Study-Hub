@@ -1,12 +1,8 @@
-# Study Hub
----
----
-# ASSIGNMENT CATAGORY: assignment_category_0001
----
----
-[Live Link:](breezy-recess.surge.sh "WEB LINK")
----
----
+## Study Hub
+
+
+## [Live Link:](https://breezy-recess.surge.sh/ "WEB LINK")
+
 [GITHUB SERVER SITE LINK:](https://github.com/Porgramming-Hero-web-course/b8a11-server-side-taskinahmadalfaruqe "GITHUB SERVER SITE LINK")
 ---
 ---
