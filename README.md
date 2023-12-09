@@ -17,6 +17,8 @@
 
 # Technology That I Used for This Project:
 ### Front-End:
+* Tailwind CSS,
+* Daisy UI,
 * React JS,
 * Firebase,
 * Axios,
