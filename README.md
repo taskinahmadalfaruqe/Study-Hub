@@ -1,20 +1,22 @@
 ## Study Hub
 
 
-## [Live Link:](https://breezy-recess.surge.sh/ "WEB LINK")
+### [Live Link:](https://breezy-recess.surge.sh "WEB LINK")
 
-[GITHUB SERVER SITE LINK:](https://github.com/Porgramming-Hero-web-course/b8a11-server-side-taskinahmadalfaruqe "GITHUB SERVER SITE LINK")
----
----
-[GITHUB CLIENT SIDE LINK:](https://github.com/Porgramming-Hero-web-course/b8a11-client-side-taskinahmadalfaruqe "GITHUB CLIENT SIDE LINK")
----
----
+[GITHUB CLIENT SIDE LINK:](https://github.com/taskinahmadalfaruqe/Study-Hub "GITHUB CLIENT SIDE LINK")
+
+
 
 # Add 5 Functional In My Project
----
-* EVERY ONE SEE COURSE AND DETAILS.
-* ONLY VALID USER CAN TAKE ASSIGNMENT, AND CREATE.
-* AFTER SUBMIT ASSIGNMENT KNOW ONE ABLE TO UPDATE IT.
-* YOU CAN LOGIN WITH EMAIL OR GOOGLE.
-* ONLY THE ASSIGNMENT CREATOR IS ABLE TO UPDATE ASSIGNMENT OR DELETE IT.
+* EVERYONE SEE COURSE AND DETAILS.
+* ONLY VALID USERS CAN TAKE ASSIGNMENTS, AND CREATE.
+* AFTER SUBMITTING THE ASSIGNMENT KNOW ONE ABLE TO UPDATE IT.
+* YOU CAN LOG IN WITH EMAIL OR GOOGLE.
+* ONLY THE ASSIGNMENT CREATOR CAN UPDATE ASSIGNMENT OR DELETE IT.
+* The Examiner Will Check The Assignment Submission And Give Marks.
 
+# Technology That I used:
+### Front-End:
+*React JS, Firebase, Axios, React-router-dom, SweetAlert2, Farmer Motion, React Date Piker.
+### Back-End:
+* NodeJS, ExpressJS, MongoDB, Cors, 
