@@ -15,8 +15,17 @@
 * ONLY THE ASSIGNMENT CREATOR CAN UPDATE ASSIGNMENT OR DELETE IT.
 * The Examiner Will Check The Assignment Submission And Give Marks.
 
-# Technology That I used:
+# Technology That I Used for This Project:
 ### Front-End:
-*React JS, Firebase, Axios, React-router-dom, SweetAlert2, Farmer Motion, React Date Piker.
+* React JS,
+* Firebase,
+* Axios,
+* React-router-dom,
+* SweetAlert2,
+* Farmer Motion,
+* React Date Piker.
 ### Back-End:
-* NodeJS, ExpressJS, MongoDB, Cors, 
+* NodeJS,
+* ExpressJS,
+* MongoDB,
+* Cors, 
