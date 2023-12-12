@@ -4,6 +4,9 @@ import Banner from "../Components/Banner";
 import LodeAssignment from "../Components/LodeAssignment";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { motion, useScroll } from "framer-motion";
+import './styles.css'
+
 
 const HomePage = () => {
     const navigate = useNavigate()
@@ -20,10 +23,19 @@ const HomePage = () => {
                     setShowAssignment(data.assignments)
                 }
             })
-    }, [])
+    }, []);
+
+
+    const { scrollYProgress } = useScroll();
 
     return (
         <div>
+
+            <motion.div
+                className="progress-bar z-[1111111]"
+                style={{ scaleX: scrollYProgress }}
+            />
+
             <Banner></Banner>
 
 
