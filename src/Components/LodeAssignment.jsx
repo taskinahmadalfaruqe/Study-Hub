@@ -53,7 +53,6 @@ const LodeAssignment = ({ singleAssignment }) => {
 
                 }
             });
-            console.log("You Can Delete Assignment", true)
         } else {
             Swal.fire({
                 icon: 'error',
@@ -85,7 +84,7 @@ const LodeAssignment = ({ singleAssignment }) => {
         navigate(`/assignmentDetails/${id}`)
     }
     return (
-        <div className='min-h-20 rounded p-2 flex gap-2 flex-col justify-between border border-blueColor relative transform transition-transform hover:scale-105 hover:z-10'>
+        <div className='min-h-20 rounded p-2 flex gap-2 flex-col justify-between border border-blueColor relative transform transition-transform hover:scale-105 hover:z-10 dark:bg-lightdarkbg'>
             <div className='absolute top-1 right-1'>
                 <button
                     onClick={() => handelDelete(_id, assignmentCreatorEmail)}
@@ -95,10 +94,10 @@ const LodeAssignment = ({ singleAssignment }) => {
             </div>
 
             <div>
-                <img src={imageURL} alt="AssignmentImage" className='rounded-md h-52 md:h-80 w-[100%]' />
+                <img src={imageURL} alt="AssignmentImage" className='rounded-md h-52 md:h-52 w-[100%]' />
             </div>
 
-            <div className='p-5 flex-1 flex flex-col justify-between bg-plataniamColor rounded-md space-y-3'>
+            <div className='p-5 flex-1 flex flex-col justify-between bg-plataniamColor dark:bg-lightdarkbg rounded-md space-y-3'>
                 <div>
                     <h2 className='text-2xl font-bold text-blueColor'>{assignmentTitle}</h2>
                 </div>
@@ -117,15 +116,15 @@ const LodeAssignment = ({ singleAssignment }) => {
                 </div>
 
                 <div className='flex flex-col md:flex-row gap-2 justify-around items-center text-center'>
-                    <div className=" bg-whiteColor p-1 px-3 rounded-md flex flex-row gap-5 w-full justify-center items-center lg:flex-col lg:gap-1 lg:w-fit">
+                    <div className=" bg-whiteColor dark:bg-darkbg p-1 px-3 rounded-md flex flex-row gap-5 w-full justify-center items-center lg:flex-col lg:gap-1 lg:w-fit">
                         <p className='text-blueColor font-semibold uppercase text-lg'>difficulty</p>
                         <p>{difficulty}</p>
                     </div>
-                    <div className=" bg-whiteColor p-1 px-3 rounded-md flex flex-row gap-5 w-full justify-center items-center lg:flex-col lg:gap-1 lg:w-fit">
+                    <div className=" bg-whiteColor dark:bg-darkbg p-1 px-3 rounded-md flex flex-row gap-5 w-full justify-center items-center lg:flex-col lg:gap-1 lg:w-fit">
                         <p className='text-blueColor font-semibold uppercase text-lg'>Marks</p>
                         <p>{marks}</p>
                     </div>
-                    <div className=" bg-whiteColor p-1 px-3 rounded-md flex flex-row gap-5 w-full justify-center items-center lg:flex-col lg:gap-1 lg:w-fit">
+                    <div className=" bg-whiteColor dark:bg-darkbg p-1 px-3 rounded-md flex flex-row gap-5 w-full justify-center items-center lg:flex-col lg:gap-1 lg:w-fit">
                         <p className='text-blueColor font-semibold uppercase text-lg'>Last Date</p>
                         <div>
                             {lastDateOfSubmition?.length > 10 ? lastDateOfSubmition.slice(0, 10) : lastDateOfSubmission}
@@ -136,12 +135,12 @@ const LodeAssignment = ({ singleAssignment }) => {
                 <div className="flex justify-between gap-5 pt-5">
                     <button
                         onClick={() => handleUpdate(_id, assignmentCreatorEmail)}
-                        className="bg-blueColor p-2 w-full rounded-md text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-3xl font-bold">
+                        className="bg-blueColor p-2 w-full rounded-md text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-3xl font-bold dark:hover:bg-darkbg">
                         <MdEdit></MdEdit>
                     </button>
                     <button
                         onClick={() => handleDetails(_id)}
-                        className="bg-blueColor p-2 w-full rounded-md  text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-3xl font-bold">
+                        className="bg-blueColor p-2 w-full rounded-md  text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-3xl font-bold dark:hover:bg-darkbg">
                         <BsFillEyeFill></BsFillEyeFill>
                     </button>
                 </div>

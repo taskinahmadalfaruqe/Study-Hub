@@ -40,7 +40,7 @@ const HomePage = () => {
                 <div className="mt-10">
                     <button
                         onClick={() => navigate("/assignment")}
-                        className="bg-blueColor  p-2 w-full rounded-md text-whiteColor hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-2xl font-bold gap-2">
+                        className="bg-blueColor  p-2 w-full rounded-md text-whiteColor hover:bg-whiteColor dark:hover:bg-lightdarkbg hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-2xl font-bold gap-2">
                         <p>Show All</p>
                         <AiOutlineArrowRight></AiOutlineArrowRight>
                     </button>
@@ -105,7 +105,7 @@ const HomePage = () => {
             <div className="container my-14 flex flex-col gap-5">
                 <h2 className="text-center uppercase mx-auto text-blueColor text-3xl font-semibold max-w-2xl ">Here Some Question And Answer About Our Activite</h2>
                 <div className="flex flex-col gap-5">
-                    <div tabIndex={0} className="collapse collapse-plus border border-whiteColor bg-whiteColor">
+                    <div tabIndex={0} className="collapse collapse-plus border border-whiteColor bg-whiteColor dark:bg-lightdarkbg">
                         <div className="collapse-title text-xl font-medium">
                             What is the main purpose of this project?
                         </div >
@@ -162,7 +162,7 @@ const HomePage = () => {
 
                         </div>
                     </div>
-                    <div tabIndex={0} className="collapse collapse-plus border border-whiteColor bg-whiteColor">
+                    <div tabIndex={0} className="collapse collapse-plus border border-whiteColor bg-whiteColor dark:bg-lightdarkbg">
                         <div className="collapse-title text-xl font-medium">
                             Is every one asscess ths web?
                         </div >
@@ -171,7 +171,7 @@ const HomePage = () => {
 
                         </div>
                     </div>
-                    <div tabIndex={0} className="collapse collapse-plus border border-whiteColor bg-whiteColor">
+                    <div tabIndex={0} className="collapse collapse-plus border border-whiteColor bg-whiteColor dark:bg-lightdarkbg">
                         <div className="collapse-title text-xl font-medium">
                             Is every post or take assignment?
                         </div >

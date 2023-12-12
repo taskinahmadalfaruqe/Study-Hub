@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 const Banner = () => {
     return (
-        <div className="bg-plataniamColor">
+        <div className="bg-plataniamColor dark:bg-darkbg">
             <div className=" container">
                 <div className="relative">
                     <div className="rounded-lg overflow-hidden w-full h-full object-cover">

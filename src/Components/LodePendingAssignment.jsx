@@ -22,47 +22,47 @@ const LodePendingAssignment = ({ singleAssignment }) => {
     return (
         <div className="border border-orangeColor p-3 rounded-md text-center flex gap-5 justify-between flex-col lg:flex-row">
             <div className="flex-1 space-y-3">
-                <div className="bg-whiteColor rounded-md text-xl font-semibold text-blueColor p-2">
+                <div className="bg-whiteColor dark:bg-lightdarkbg rounded-md text-xl font-semibold text-blueColor p-2">
                     <h2>{assignmentTitle}</h2>
                 </div>
-                <div className="bg-whiteColor rounded-md p-2">
+                <div className="bg-whiteColor dark:bg-lightdarkbg rounded-md p-2">
                     <p className="text-blueColor font-semibold text-xl">Submit By:</p>
                     <p>{submitBy}</p>
                 </div>
 
                 <div className="flex gap-3 w-full">
-                    <div className="bg-whiteColor rounded-md p-2 flex-1">
+                    <div className="bg-whiteColor dark:bg-lightdarkbg rounded-md p-2 flex-1">
                         <p className="text-blueColor font-semibold text-xl">Marks</p>
                         <p>{marks}</p>
                     </div>
-                    <div className="bg-whiteColor rounded-md p-2 flex-1">
+                    <div className="bg-whiteColor dark:bg-lightdarkbg rounded-md p-2 flex-1">
                         <p className="text-blueColor font-semibold text-xl">Status</p>
                         <p>{status}</p>
                     </div>
                 </div>
-                <div className="bg-whiteColor rounded-md p-2">
+                <div className="bg-whiteColor dark:bg-lightdarkbg rounded-md p-2">
                     <p className="text-xl text-blueColor font-semibold">Submit Date</p>
                     <p>{submitDate}</p>
                 </div>
             </div>
 
             <div className="flex-1 space-y-3 min-h-full flex gap-3 flex-col justify-between">
-                <div className="bg-whiteColor rounded-md p-2 h-[50%]">
+                <div className="bg-whiteColor dark:bg-lightdarkbg rounded-md p-2 h-[50%]">
                     <p className="text-xl text-blueColor font-semibold border-b border-orangeColor">Note For Project</p>
                     <p>{note}</p>
                 </div>
-                <div className="bg-whiteColor rounded-md p-2 h-[50%]">
+                <div className="bg-whiteColor dark:bg-lightdarkbg  rounded-md p-2 h-[50%]">
                     <div className="h-full flex flex-col justify-between">
                         <p className="text-xl text-blueColor font-semibold border-b border-orangeColor h-[50%]">Read Submitted Project</p>
                         <div className='flex gap-5'>
-                            <button className="bg-blueColor p-2 w-full rounded-md text-whiteColor h-[100%] hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-xl font-bold">
+                            <button className="bg-blueColor   p-2 w-full rounded-md text-whiteColor h-[100%] hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-xl font-bold dark:hover:bg-darkbg dark:hover:text-whiteColor ">
                                 <Link to={projectFile} target="_blank">
                                     Read The Submission
                                 </Link>
                             </button>
                             <button 
                             onClick={()=>handleGivMarks(_id)}
-                            className="bg-blueColor p-2 w-full rounded-md text-whiteColor h-[100%] hover:bg-whiteColor hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-xl font-bold">
+                            className="bg-blueColor p-2 w-full rounded-md text-whiteColor h-[100%] hover:bg-whiteColor  hover:text-blueColor transition-all duration-300 border border-blueColor flex justify-center items-center text-xl font-bold dark:hover:bg-darkbg dark:hover:text-whiteColor">
                                 Give Mark
                             </button>
                         </div>

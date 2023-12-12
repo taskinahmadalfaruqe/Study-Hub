@@ -10,7 +10,7 @@ const Footer = () => {
                         <p>StudyHub Industries Ltd.<br />Providing reliable tech since 1992</p>
                     </aside>
                     <nav>
-                        <header className="footer-title">You Can Also Visi</header>
+                        <header className="footer-title text-whiteColor">You Can Also Visit</header>
                         <div className="grid grid-cols-1 xl:grid-cols-1 xl:grid-flow-col">
                             <NavLink
                                 to={"/"}

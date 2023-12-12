@@ -5,7 +5,7 @@ import { createContext, useEffect, useState } from "react";
 import Swal from 'sweetalert2';
 
 // Initialize Firebase Authentication and get a reference to the service
-const auth = getAuth(app);
+const auth = getAuth(app); 
 
 
 //CREATE A CONTEXT
@@ -15,8 +15,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isUserLoding, setIsUserLoding] = useState(true);
-    console.log(user)
-
+   
     // CREATE USER WITH EMAIL AND PASSWORD 
     const handelCreateUserWithEmailPassword = async (email, password) => {
         try {

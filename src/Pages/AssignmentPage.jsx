@@ -47,12 +47,12 @@ const AssignmentPage = () => {
                 <h2 className="text-xl lg:text-3xl text-center md:px-10 lg:px-16 font-Raleway font-semibold uppercase text-blueColor">The Number Of Total Assignment is: {total} Every Valid User Can Post Or Take An Assignment</h2>
             </div>
             <div>
-                <div className="flex justify-start flex-col p-1 flex-1">
+                <div className="flex justify-start flex-col p-1 flex-1 ">
                     <label htmlFor="difficulty">Assignment Difficulty:</label>
                     <select
                         name="difficulty"
                         id="difficulty"
-                        className="p-1 rounded-sm mt-2 focus:outline-none"
+                        className="p-1 rounded-sm mt-2 focus:outline-none dark:bg-lightdarkbg"
                         onChange={(e) => setDifficultyStatus(e.target.value)}
                     >
                         <option value="">All Assignment</option>
@@ -72,7 +72,7 @@ const AssignmentPage = () => {
             </div>
             <div className="flex justify-end mt-10">
                 <div className="join border border-blueColor p-2">
-                    <button onClick={handelPrevious} className="join-item btn ">
+                    <button onClick={handelPrevious} className="join-item btn dark:bg-darkbg dark:text-whiteColor ">
                         <AiOutlineArrowLeft></AiOutlineArrowLeft>
                     </button>
                     {
@@ -82,11 +82,11 @@ const AssignmentPage = () => {
                                 onClick={()=>setpage(pageindex)}
                                 key={pageindex} 
                                 className={`${pageindex === page?
-                                "bg-blueColor text-white btn":"join-item btn"}`}>{pageindex}</button>)
+                                "bg-blueColor text-white btn":"join-item btn dark:bg-darkbg dark:text-whiteColor"}`}>{pageindex}</button>)
                         })
                     }
 
-                    <button onClick={handelNext} className="join-item btn ">
+                    <button onClick={handelNext} className="join-item btn dark:bg-darkbg dark:text-whiteColor  ">
                         <AiOutlineArrowRight></AiOutlineArrowRight>
                     </button>
                 </div>
