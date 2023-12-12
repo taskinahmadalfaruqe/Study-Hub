@@ -4,8 +4,7 @@ import Banner from "../Components/Banner";
 import LodeAssignment from "../Components/LodeAssignment";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { motion, useScroll } from "framer-motion";
-import './styles.css'
+
 
 
 const HomePage = () => {
@@ -26,19 +25,11 @@ const HomePage = () => {
     }, []);
 
 
-    const { scrollYProgress } = useScroll();
+ 
 
     return (
         <div>
-
-            <motion.div
-                className="progress-bar z-[1111111]"
-                style={{ scaleX: scrollYProgress }}
-            />
-
             <Banner></Banner>
-
-
             <div className="my-10 container">
                 <h2 className="text-center uppercase mx-auto text-blueColor mt-5 text-3xl font-semibold max-w-2xl">Show Some Assignment</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 mt-10">
