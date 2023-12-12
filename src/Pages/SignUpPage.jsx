@@ -45,7 +45,7 @@ const SignUpPage = () => {
     }
     return (
         <div className="flex justify-center items-center">
-            <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-blackColor shadow-none">
+            <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-blackColor shadow-none dark:text-whiteColor">
                 <h4 className="block font-sans text-2xl text-center font-semibold leading-snug tracking-normal text-orangeColor antialiased">
                     Sign Up To Study Hub
                 </h4>
