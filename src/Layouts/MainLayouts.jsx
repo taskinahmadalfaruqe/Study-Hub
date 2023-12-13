@@ -5,6 +5,7 @@ import { motion, useScroll } from "framer-motion";
 import { IoIosArrowUp } from "react-icons/io";
 import './styles.css'
 import { useEffect, useState } from "react";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const MainLayouts = () => {
     const { scrollYProgress } = useScroll();
@@ -41,6 +42,12 @@ const MainLayouts = () => {
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
+
+
+            <MessengerCustomerChat
+                pageId="104235124306928"
+                appId="317420677841540"
+            />
 
             <motion.div
                 className="progress-bar z-[1111111]"

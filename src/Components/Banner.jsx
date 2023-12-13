@@ -7,7 +7,7 @@ const Banner = () => {
                     <div className="rounded-lg overflow-hidden w-full h-full object-cover">
                         <img src={'https://i.ibb.co/nznJk6s/bg.jpg'} className="rounded-md object-cover w-full lg:h-[500px]" alt="BannerImage" />
                     </div>
-                    <div className="absolute top-0 left-0 rounded-md w-full h-full flex justify-end items-center dark:bg-darkbg opacity-90">
+                    <div className="absolute top-0 left-0 rounded-md w-full h-full flex justify-end items-center dark:bg-darkbg opacity-80">
                         <div className="max-w-xl flex flex-col gap-4 p-1">
                             <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-blueColor dark:text-whiteColor text-center opacity-100">Unlocking the World of Knowledge: Your Study Destination</h1>
                             <p className="text-center mt-5 hidden md:flex text-blueColor dark:text-whiteColor">
